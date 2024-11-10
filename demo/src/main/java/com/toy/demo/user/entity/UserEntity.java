@@ -1,5 +1,6 @@
 package com.toy.demo.user.entity;
 
+import com.toy.demo.diary.entity.DiaryEntity;
 import com.toy.demo.relation.entity.UserAirplaneEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,9 @@ public class UserEntity {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DiaryEntity> diaries;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RefreshTokenEntity> refreshTokens;
