@@ -7,11 +7,11 @@
 
 
 커맨드 정리 모음
-#creating pods
+creating pods
 kubectl run hello-kiamol --image=kiamol/ch02-hello-kiamol 
-#know pods name which is in cluster
+know pods name which is in cluster
 kubectl get pods
-#wait until pod is ready
+wait until pod is ready
 kubectl wait --for=condition=Ready pod hello-kiamol
 
 
