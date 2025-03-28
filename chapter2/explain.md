@@ -9,18 +9,24 @@
 커맨드 정리 모음
 creating pods
 kubectl run hello-kiamol --image=kiamol/ch02-hello-kiamol 
+
 know pods name which is in cluster
+
 kubectl get pods
+
 wait until pod is ready
+
 kubectl wait --for=condition=Ready pod hello-kiamol
 
 
 컨테이너를 실행하는 책임도 노드가 가짐
+
 컨테이너 런타임 API를 통해 관리
 
 kubectl port-forward pod/hello-kiamol 8080:80 로컬의 8080번 포트에서 들어오는걸 파드의 80번 포트로 전달한다. 
 
 ## Application Manifest (Deployment)
+
 kubectl을 이용하면 파드 안에 있는 컨테이너에 접근을 할 수 있는 방법이 있다. 
 
 kubectl get pod hello-kiamol -o custom-columns=NAME:.metadata.name,POD_IP:.status.podIP
@@ -28,6 +34,7 @@ kubectl get pod hello-kiamol -o custom-columns=NAME:.metadata.name,POD_IP:.statu
 파드속 파일 시스템에 접근하는 방법도 있다
 
 ## 쿠버네티스 리소스 관리하기 
+
 kubectl get pods 
 
 kubectl delete pods —all
